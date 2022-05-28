@@ -8,36 +8,59 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-
-  <div class="container">
-    <form action="post">
-      <h2>Sign-up</h2>
-      <ul>
-        <li>
-          <label for="name">Full Name</label>
-          <input type="text" id="name">
-        </li>
-        <li>
-          <label for="email">Email</label>
-          <input type="email" id="email">
-        </li>
-        <li>
-          <label for="phone">Phone Number</label>
-          <input type="text" id="phone">
-        </li>
-        <li>
-          <label for="pwd">Password</label>
-          <input type="password" id="pwd">
-        </li>
-        <li>
-          <label for="confirm-pwd">Confirm Password</label>
-          <input type="password" id="confirm-pwd">
-        </li>
-        <li>
-          <button type="submit">Create Account</button>
-        </li>
-      </ul>
-    </form>
+  <div class="all">
+    <div class="left">
+      <style>
+        .text {
+          fill: white;
+          font-size: .75px;
+        }
+      </style>
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="2.95 2.95 4.1 5.1" class="ricehat">
+        <path d="M 3 5 Q 5 5.76 7 5 M 3 5 L 5 3 L 7 5 M 4.5 6.5 L 5 8 L 5.5 6.5 M 4.65 6.5 L 5 7.8 L 5.35 6.5 M 5 6.5 L 5 7.75 M 5 3 M 5 3 M 4.75 3.25 L 5.25 3.25 M 4.5 3.5 L 5.5 3.5 M 4.25 3.75 L 5.75 3.75 M 4 4 L 6 4" stroke="white" stroke-width="0.05" fill="none"/>
+        <text class="text" x="3.8" y="4.95">RiceHat</text>
+      </svg>
+    </div>
+    <div class="container">
+      <form action="post">
+        <h2>Sign-up</h2>
+        <ul>
+          <li>
+            <input type="text" id="name">
+            <label for="name">Full Name</label>
+          </li>
+          <li>
+            <input type="text" id="username">
+            <label for="username">Username</label>
+          </li>
+          <li>
+            <input type="email" id="email">
+            <label for="email">Email</label>
+          </li>
+          <li>
+            <input type="text" id="phone">
+            <label for="phone">Phone Number</label>
+          </li>
+          <li>
+            <input type="password" id="pwd">
+            <label for="pwd">Password</label>
+          </li>
+          <li>
+            <input type="password" id="confirm-pwd">
+            <label for="confirm-pwd">Confirm Password</label>
+          </li>
+          <li>
+            <button type="submit">Create Account
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="4.3 6.9 1.9 1.5" class="arrow">
+                <path d="M 4 7 L 4 8 L 5 7.5 Z M 5.5 7 L 5.5 8 L 6.5 7.5 Z" stroke="blue" stroke-width="0.1" fill="#C0C0C0"/>
+              </svg>
+            </button>
+            
+            <p>Already have an account? <a href="">Click here</a></p>
+          </li>
+        </ul>
+      </form>
+    </div>
   </div>
   
 </body>

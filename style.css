@@ -1,0 +1,145 @@
+* {
+  box-sizing: border-box;
+}
+
+:root {
+  background-image: url("viet.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  height: 100%;
+}
+
+.ricehat {
+  width: 100px;
+  height: auto;
+  position: absolute;
+  left: 35%;
+  background-color: rgba(0, 0, 0, .4);
+}
+
+.container {
+  margin: 0 auto;
+  position: relative;
+  top: 5rem;
+  padding: 3rem 1rem;
+  padding-bottom: 1.5rem;
+  display: flex;
+  justify-content: center;
+}
+
+form {
+  display: grid;
+}
+
+h2 {
+  display: none;
+}
+
+ul {
+  justify-self: center;
+  display: grid;
+  padding: 0;
+}
+
+li {
+  justify-self: start;
+  list-style: none;
+}
+
+label {
+  display: block;
+  margin: .5rem 0;
+}
+
+input {
+  padding: .5rem;
+  border-radius: 5px;
+}
+
+button {
+  margin-top: 3rem;
+  width: 12rem;
+  height: 3rem;
+  background-color: skyblue;
+  color: blue;
+  position: relative;
+  text-align: start;
+  font-size: 1rem;
+  border-radius: 10px;
+}
+
+button > svg {
+  width: 3rem;
+  height: 1.5rem;
+  position: absolute;
+  bottom: .55rem;
+  right: 1rem;
+}
+
+@media screen and (min-width: 801px) {
+  :root {
+    background: none;
+  }
+  body {
+    background-color: black;
+    margin: 0;
+  }
+  .all {
+    width: 801px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: row;
+    overflow: hidden;
+    background-color: white;
+  }
+  .left {
+    background-image: url("viet.jpg");
+    min-width: 301px;
+    height: 100vh;
+  }
+  .ricehat {
+    top: 4rem;
+    left: 18rem;
+  }
+  .container {
+    position: static;
+    margin-top: 5rem;
+    display: inline;
+    padding: 0;
+    align-self: center;
+    min-width: 500px;
+    height: auto;
+    box-shadow: 5px 5px 10px black;
+    border-top: 2px solid rgb(128, 128, 128);
+    background-color: rgba(128, 128, 128, .8);
+  }
+  h2 {
+    margin: 1rem 0;
+    text-align: start;
+    }
+  ul {
+    margin-top: 3rem;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+  }
+  li {
+    font-size: 12px;
+    position: relative;
+  }
+  li:last-child {
+    grid-column: 1 / 2;
+  }
+  label {
+    position: absolute;
+    left: .75rem;
+    top: .25rem
+  }
+  input:focus + label {
+    transition: all ease .2s;
+    transform: translate(-1rem, -1.75rem);
+  }
+  button {
+    margin-top: 0;
+  }
+}
