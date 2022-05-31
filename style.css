@@ -24,8 +24,7 @@
   width: 62%;
   margin: 0 auto;
   position: relative;
-  padding: 3rem 1rem;
-  padding-bottom: 1.5rem;
+  padding: 2rem 1rem;
   display: flex;
   justify-content: center;
 }
@@ -34,7 +33,11 @@ form {
   display: grid;
 }
 
-h2 {
+.chosen-avatar {
+  width: 6rem;
+  height: 6rem;
+  margin-bottom: 0;
+  align-self: center;
   display: none;
 }
 
@@ -45,11 +48,15 @@ ul {
   margin: 0;
 }
 
-li:not(li.avatar-li) {
+li {
+  justify-self: center;
   list-style: none;
+  position: relative;
+}
+
+li:not(li.avatar-li):not(:first-child) {
   display: flex;
   flex-direction: column;
-  position: relative;
   margin-bottom: 1rem;
 }
 
@@ -59,26 +66,33 @@ li:first-child, li:last-child {
 
 label {
   display: block;
-  margin: .5rem 0;
+  max-width: 12rem;
   order: 1;
+  color: white;
 }
 
 input {
-  padding: .5rem;
-  border-radius: 5px;
+  padding: .5rem .5rem 0;
+  background-color: inherit;
+  border: none;
+  border-bottom: 2px solid white;
   order: 2;
+  max-width: 12rem;
+  margin: 0 auto;
 }
 
 input:focus {
   outline: 1px solid blue;
+  background-color: rgb(206, 202, 202);
 }
 
 input:valid:not([type="file"]):not(:placeholder-shown) {
   outline: 2px solid green;
+  background-color: rgb(206, 202, 202);
 }
 
 input:invalid:not(:focus):not(:placeholder-shown) {
-  outline: 2px solid red;
+  outline: 1.5px solid red;
 }
 
 input:valid:not(input[type="file"]):not(:placeholder-shown) + label::after {
@@ -87,7 +101,7 @@ input:valid:not(input[type="file"]):not(:placeholder-shown) + label::after {
   width: 1rem;
   height: 1rem;
   position: absolute;
-  left: 10.5rem;
+  right: .75rem;
   top: 2.75rem;
 }
 input:invalid:not(:focus):not(:placeholder-shown) + label::after {
@@ -96,25 +110,26 @@ input:invalid:not(:focus):not(:placeholder-shown) + label::after {
   width: 1rem;
   height: 1rem;
   position: absolute;
-  left: 10.5rem;
+  right: .75rem;
   top: 2.75rem;
 }
-input:invalid:not(:focus):not(:placeholder-shown) ~ div {
+input:invalid:not(:focus):not(:placeholder-shown) ~ div:not(.chosen-avatar) {
   display: block;
-  position: absolute;
-  top: 4.25rem;
-  width: fit-content;
+  max-width: 12rem;
+  top: 1.75rem;
+  background-color:rgb(203, 172, 172);
+  z-index: 2;
 }
 
-li:not(.avatar-li) > div {
+li:not(.avatar-li) > div:not(.chosen-avatar) {
   display: none;
   background-color: white;
   color: red;
   order: 3;
-  margin-top: 5px;
   border-radius: 5px;
   padding: 2px;
   text-align: center;
+  font-size: 12px;
 }
 
 .avatar-li {
@@ -124,6 +139,13 @@ li:not(.avatar-li) > div {
   position: relative;
   flex-wrap: wrap;
   justify-content: space-evenly;
+}
+
+.chosen-avatar + p {
+  position: block;
+  font-size: 1.5rem;
+  margin: 0;
+  color: tan;
 }
 
 .avatar-li div {
@@ -138,7 +160,7 @@ li:not(.avatar-li) > div {
   z-index: 1;
   border-radius: 10px;
 }
-.avatar-li div:first-child {
+.avatar-li div:nth-child(1) {
   background-image: url("moto2.jpg");
   display: inline-block;
 }
@@ -155,9 +177,9 @@ li:not(.avatar-li) > div {
   display: inline-block;
 }
 
-.avatar-li div:first-child:hover, .avatar-li div:nth-child(2):hover, 
+.avatar-li div:nth-child(1):hover, .avatar-li div:nth-child(2):hover, 
 .avatar-li div:nth-child(3):hover {
-  transform: scale(3);
+  transform: scale(2);
   transition: all ease .1s;
   z-index: 2;
   border: 2px solid blue;
@@ -197,6 +219,10 @@ button > svg {
   right: 1rem;
 }
 
+p {
+  font-size: 12px;
+}
+
 @media screen and (min-width: 801px) {
   
   .all {
@@ -205,6 +231,28 @@ button > svg {
     display: flex;
     flex-direction: row;
     position: relative;
+  }
+
+  .chosen-avatar {
+    position: absolute;
+    top: 2rem;
+    left: 11rem;
+    grid-column: 1 / 3;
+    margin: 0;
+  }
+
+  .choose {
+    display: none;
+  }
+  .chosen-avatar + p {
+    position: absolute;
+    width: 12rem;
+    border: 2px solid yellow;
+    text-align: center;
+    grid-column: 1 /3;
+    font-size: 1rem;
+    margin: 0;
+    color: tan;
   }
   
   .ricehat {
@@ -237,12 +285,13 @@ button > svg {
     gap: 1.5rem;
   }
   li {
-    font-size: 12px;
+    font-size: 16px;
     position: relative;
   }
   li:last-child {
     grid-column: 1 / 3;
     justify-content: center;
+    margin: 0 !important;
   }
 
   .avatar-li {
@@ -267,28 +316,32 @@ button > svg {
   }
   label {
     position: absolute;
-    left: .75rem;
-    top: .25rem
+  }
+
+  input:hover {
+    background-color: tan;
   }
   input:focus + label, input:valid:not(:placeholder-shown) + label, 
   input:not(:focus):not(:placeholder-shown):invalid + label {
     transition: all ease .2s;
-    transform: translate(-1rem, -1.75rem);
+    transform: translate(-.5rem, -1rem);
     font-weight: 600;
     font-size: .85rem;
+    color: white;
   }
 
   input:valid:not(input[type="file"]):not(:placeholder-shown) + label::after {
     left: 10.75rem;
-    top: 1.5rem;
+    top: 1.25rem;
   }
   input:invalid:not(:focus):not(:placeholder-shown) + label::after {
     left: 10.75rem;
-    top: 1.5rem;
+    top: 1.25rem;
   }
 
   input:invalid:not(:focus):not(:placeholder-shown) ~ div {
-    top: 2rem;
+    top: .25rem;
+    position: absolute;
   }
   
   button {
