@@ -32,33 +32,37 @@
             </svg>
           </li>
           <li>
-            <input type="text" id="name" placeholder=" " pattern="^[a-zA-z\s]+$" 
-            required>
+            <input type="text" id="name" placeholder=" " pattern="^[a-zA-z\s]+$">
             <label for="name">Full Name</label>
+            <div>Letters and spaces only</div>
           </li>
           <li>
-            <input type="text" id="username" placeholder=" " pattern="^[\w\d\.-]+$"
-             minlength=3 maxlength=15 required>
-            <label for="username">Username</label>
+            <input type="text" id="username" placeholder=" " pattern="^[\w\d\.-]{3,15}$"
+            required>
+            <label for="username">Username*</label>
+            <div>3-15 characters: letters, numbers, '.', and '-'</div>
           </li>
           <li>
             <input type="email" id="email" placeholder=" " required>
-            <label for="email">Email</label>
+            <label for="email">Email*</label>
+            <div>Invalid email address</div>
           </li>
           <li>
-            <input type="text" id="phone" placeholder=" " pattern="\d{3}[\-]\d{3}[\-]\d{4}" 
-            required>
+            <input type="tel" id="phone" placeholder=" " pattern="^\d{3}[\-]\d{3}[\-]\d{4}$">
             <label for="phone">Phone Number</label>
+            <div>Format: xxx-xxx-xxxx</div>
           </li>
           <li>
             <input type="password" placeholder=" " 
             pattern="(?=^.{8,}$)((?=.*\d)|(?=.*\W+))(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$" 
             id="pwd" required>
-            <label for="pwd">Password</label>
+            <label for="pwd">Password*</label>
+            <div>Uppercase, lowercase, and numbers only</div>
           </li>
           <li>
             <input type="password" placeholder=" " id="confirm-pwd" required>
-            <label for="confirm-pwd">Confirm Password</label>
+            <label for="confirm-pwd">Confirm Password*</label>
+            <div>Passwords must match</div>
           </li>
           <li class="avatar-li">
             <div></div>
