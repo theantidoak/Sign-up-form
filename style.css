@@ -51,37 +51,43 @@ input {
   margin: 0 auto;
 }
 
-input:hover, input:hover + label {
-  color: tan;
-  border-color: tan;
-}
-
 input:focus {
   outline: none;
-  border-bottom: 2px solid tan;
-  background-color: tan;
+  border-bottom: 2px solid white;
+  background-color: white;
   border-radius: 10px;
 }
 
 input:focus + label {
-  color: tan;
+  color: black;
+}
+
+input:hover {
+  border-color: tan;
+  border-bottom-color: tan;
 }
 
 input:valid:not(:placeholder-shown):not([type="file"]) {
   border: 2px solid green;
-  background-color: tan;
+  background-color: white;
   border-radius: 10px;
 }
 
 input:invalid:not(:placeholder-shown):not(:focus) {
   border: 2px solid red;
   border-radius: 10px;
+  background-color: white;
 }
 
 /* Labels */
 label {
   display: block;
   color: white;
+}
+
+input:placeholder-shown:hover + label {
+  color: tan;
+  border-color: tan;
 }
 
 input:valid:not(:placeholder-shown):not(input[type="file"]) + label::after {
@@ -131,6 +137,7 @@ input:invalid:not(:focus):not(:placeholder-shown) ~ p {
 }
 
 .avatar-li {
+  width: 12rem;
   flex-direction: row;
   gap: .5rem;
   flex-wrap: wrap;
@@ -235,6 +242,7 @@ button + p {
 
   .avatar-li {
     margin: -1.5rem;
+    width: 20rem;
   }
 
   /* Labels */
