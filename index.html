@@ -7,80 +7,78 @@
   <title>Sign Up</title>
   <link rel="stylesheet" href="style.css">
 </head>
-<body>
-  <div class="all">
-    <div class="container">
-      <form action="post">
-        <ul>
-          <li>
-            <style>
-              .text {
-                fill: white;
-                font-size: .75px;
-              }
-            </style>
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="3.45 2.95 3.1 3.562" class="ricehat">
-              <path d="M 3.5 5 Q 5 5.7 6.5 5 M 3.5 5 L 5 3 L 6.5 5 M 3.5 5 L 5 5.75 L 6.5 5 M 4.75 6.15 L 3.5 5 M 5.25 6.15 L 6.5 5 M 6 5.45 C 7 6.25 5.5 7.35 6 5.25 M 4 5.45 C 3 6.25 4.5 7.35 4 5.25" stroke="black" stroke-width="0.05" fill="tan"/>
-              <text class="text" x="3.8" y="4.95">RiceHat</text>
+<body> 
+  <div class="container">
+    <form action="post">
+      <ul>
+        <li>
+          <style>
+            .text {
+              fill: white;
+              font-size: .75px;
+            }
+          </style>
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="3.45 2.95 3.1 3.562" class="ricehat">
+            <path d="M 3.5 5 Q 5 5.7 6.5 5 M 3.5 5 L 5 3 L 6.5 5 M 3.5 5 L 5 5.75 L 6.5 5 M 4.75 6.15 L 3.5 5 M 5.25 6.15 L 6.5 5 M 6 5.45 C 7 6.25 5.5 7.35 6 5.25 M 4 5.45 C 3 6.25 4.5 7.35 4 5.25" stroke="black" stroke-width="0.05" fill="tan"/>
+            <text class="text" x="3.8" y="4.95">RiceHat</text>
+          </svg>
+        </li>
+        <li>
+          <input type="text" id="name" placeholder=" " pattern="^[a-zA-z\s]+$">
+          <label for="name">Full Name:</label>
+          <div>Letters and spaces only</div>
+        </li>
+        <li>
+          <input type="text" id="username" placeholder=" " pattern="^[\w\d\.-]{3,15}$"
+          required>
+          <label for="username">Username*:</label>
+          <div>3-15 characters: letters, numbers, '.', and '-'</div>
+        </li>
+        <li>
+          <input type="email" id="email" placeholder=" " required>
+          <label for="email">Email*:</label>
+          <div>Invalid email address</div>
+        </li>
+        <li>
+          <input type="tel" id="phone" placeholder=" " pattern="^\d{3}[\-]\d{3}[\-]\d{4}$">
+          <label for="phone">Phone Number:</label>
+          <div>Format: xxx-xxx-xxxx</div>
+        </li>
+        <li>
+          <input type="password" placeholder=" " 
+          pattern="(?=^.{8,}$)((?=.*\d)|(?=.*\W+))(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$" 
+          id="pwd" required>
+          <label for="pwd">Password*:</label>
+          <div>8+ characters: At least 1 uppercase, 1 lowercase, & 1 number</div>
+        </li>
+        <li>
+          <input type="password" placeholder=" " id="confirm-pwd" required>
+          <label for="confirm-pwd">Confirm Password*:</label>
+          <div>Passwords must match</div>
+        </li>
+        <li class="choose">
+          <div class="avatar-display"></div>
+          <p>Choose an Avatar</p>
+        </li>
+        <li class="avatar-li">
+          <div></div>
+          <div></div>
+          <div></div>
+          <div>
+            <input type="file" id="avatar">
+            <label for="avatar">Upload here</label>
+          </div>
+        </li>
+        <li>
+          <button type="submit">Create Account
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="4.3 6.9 1.9 1.5" class="arrow">
+              <path d="M 4 7 L 4 8 L 5 7.5 Z M 5.5 7 L 5.5 8 L 6.5 7.5 Z" stroke="blue" stroke-width="0.1" fill="#C0C0C0"/>
             </svg>
-          </li>
-          <li>
-            <input type="text" id="name" placeholder=" " pattern="^[a-zA-z\s]+$">
-            <label for="name">Full Name:</label>
-            <div>Letters and spaces only</div>
-          </li>
-          <li>
-            <input type="text" id="username" placeholder=" " pattern="^[\w\d\.-]{3,15}$"
-            required>
-            <label for="username">Username*:</label>
-            <div>3-15 characters: letters, numbers, '.', and '-'</div>
-          </li>
-          <li>
-            <input type="email" id="email" placeholder=" " required>
-            <label for="email">Email*:</label>
-            <div>Invalid email address</div>
-          </li>
-          <li>
-            <input type="tel" id="phone" placeholder=" " pattern="^\d{3}[\-]\d{3}[\-]\d{4}$">
-            <label for="phone">Phone Number:</label>
-            <div>Format: xxx-xxx-xxxx</div>
-          </li>
-          <li>
-            <input type="password" placeholder=" " 
-            pattern="(?=^.{8,}$)((?=.*\d)|(?=.*\W+))(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$" 
-            id="pwd" required>
-            <label for="pwd">Password*:</label>
-            <div>8+ characters: At least 1 uppercase, 1 lowercase, & 1 number</div>
-          </li>
-          <li>
-            <input type="password" placeholder=" " id="confirm-pwd" required>
-            <label for="confirm-pwd">Confirm Password*:</label>
-            <div>Passwords must match</div>
-          </li>
-          <li class="choose">
-            <div class="chosen-avatar"></div>
-            <p>Choose an Avatar</p>
-          </li>
-          <li class="avatar-li">
-            <div></div>
-            <div></div>
-            <div></div>
-            <div>
-              <input type="file" id="avatar">
-              <label for="avatar">Upload here</label>
-            </div>
-          </li>
-          <li>
-            <button type="submit">Create Account
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="4.3 6.9 1.9 1.5" class="arrow">
-                <path d="M 4 7 L 4 8 L 5 7.5 Z M 5.5 7 L 5.5 8 L 6.5 7.5 Z" stroke="blue" stroke-width="0.1" fill="#C0C0C0"/>
-              </svg>
-            </button>
-            <p>Already have an account? <a href="">Click here</a></p>
-          </li>
-        </ul>
-      </form>
-    </div>
+          </button>
+          <p>Already have an account? <a href="">Click here</a></p>
+        </li>
+      </ul>
+    </form>
   </div>
   
 </body>
