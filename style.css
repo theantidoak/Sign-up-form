@@ -280,8 +280,4 @@ button + p {
     width: 6rem;
     height: 3rem;
   }
-
-  button > svg {
-    display: none;
-  }
 }
