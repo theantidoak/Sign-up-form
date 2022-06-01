@@ -25,36 +25,36 @@
         </li>
         <li>
           <input type="text" id="name" placeholder=" " pattern="^[a-zA-z\s]+$">
-          <label for="name">Full Name:</label>
-          <div>Letters and spaces only</div>
+          <label for="name">Full Name</label>
+          <p>Letters and spaces only</p>
         </li>
         <li>
           <input type="text" id="username" placeholder=" " pattern="^[\w\d\.-]{3,15}$"
           required>
-          <label for="username">Username*:</label>
-          <div>3-15 characters: letters, numbers, '.', and '-'</div>
+          <label for="username">Username*</label>
+          <p>3-15 characters</p>
         </li>
         <li>
           <input type="email" id="email" placeholder=" " required>
-          <label for="email">Email*:</label>
-          <div>Invalid email address</div>
+          <label for="email">Email*</label>
+          <p>Invalid email address</p>
         </li>
         <li>
           <input type="tel" id="phone" placeholder=" " pattern="^\d{3}[\-]\d{3}[\-]\d{4}$">
-          <label for="phone">Phone Number:</label>
-          <div>Format: xxx-xxx-xxxx</div>
+          <label for="phone">Phone Number</label>
+          <p>Format: xxx-xxx-xxxx</p>
         </li>
         <li>
           <input type="password" placeholder=" " 
           pattern="(?=^.{8,}$)((?=.*\d)|(?=.*\W+))(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$" 
           id="pwd" required>
-          <label for="pwd">Password*:</label>
-          <div>8+ characters: At least 1 uppercase, 1 lowercase, & 1 number</div>
+          <label for="pwd">Password*</label>
+          <p>Invalid password</p>
         </li>
         <li>
           <input type="password" placeholder=" " id="confirm-pwd" required>
-          <label for="confirm-pwd">Confirm Password*:</label>
-          <div>Passwords must match</div>
+          <label for="confirm-pwd">Confirm Password*</label>
+          <p>Passwords must match</p>
         </li>
         <li class="choose">
           <div class="avatar-display"></div>
@@ -70,10 +70,7 @@
           </div>
         </li>
         <li>
-          <button type="submit">Create Account
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="4.3 6.9 1.9 1.5" class="arrow">
-              <path d="M 4 7 L 4 8 L 5 7.5 Z M 5.5 7 L 5.5 8 L 6.5 7.5 Z" stroke="blue" stroke-width="0.1" fill="#C0C0C0"/>
-            </svg>
+          <button type="submit">Sign Up
           </button>
           <p>Already have an account? <a href="">Click here</a></p>
         </li>

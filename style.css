@@ -15,6 +15,10 @@
   width: 15rem;
   margin: 0 auto;
   background-color: rgba(128, 128, 128, .8);
+  box-shadow: 5px 5px 10px black;
+  border-top: 2px solid rgb(128, 128, 128);
+  border-left: 2px solid rgb(128, 128, 128);
+  border-radius: 25px;
 }
 
 ul {
@@ -26,7 +30,7 @@ li {
   justify-self: center;
   list-style: none;
   position: relative;
-  margin: .5rem;
+  margin: .25rem;
   display: flex;
   flex-direction: column;
 }
@@ -37,28 +41,30 @@ li {
   height: auto;
 }
 
-label {
-  display: block;
-  order: 1;
-  color: white;
-}
-
 /* Inputs */
 input {
-  padding: .5rem .5rem 0;
+  padding: .5rem .5rem .2rem;
   background-color: inherit;
-  border: none;
+  border-style: outset inset solid outset;
   border-bottom: 2px solid white;
-  order: 2;
   max-width: 12rem;
   margin: 0 auto;
 }
 
+input:hover, input:hover + label {
+  color: tan;
+  border-color: tan;
+}
+
 input:focus {
   outline: none;
-  border-bottom: 2px solid blue;
+  border-bottom: 2px solid tan;
   background-color: tan;
   border-radius: 10px;
+}
+
+input:focus + label {
+  color: tan;
 }
 
 input:valid:not(:placeholder-shown):not([type="file"]) {
@@ -68,11 +74,16 @@ input:valid:not(:placeholder-shown):not([type="file"]) {
 }
 
 input:invalid:not(:placeholder-shown):not(:focus) {
-  border: 1.5px solid red;
+  border: 2px solid red;
   border-radius: 10px;
 }
 
 /* Labels */
+label {
+  display: block;
+  color: white;
+}
+
 input:valid:not(:placeholder-shown):not(input[type="file"]) + label::after {
   content: url("Photos/validsvg.svg");
 }
@@ -83,22 +94,23 @@ label::after {
   width: 1rem;
   height: 1rem;
   position: absolute;
-  right: .5rem;
-  top: 1.5rem;
+  left: -1.1rem;
+  top: .5rem;
 }
 
-/* Divs */
-li:not(.avatar-li) > div:not(.avatar-display) {
+/* Error Messages */
+label ~ p {
   display: none;
-  background-color: inherit;
-  color: rgb(5, 0, 0);
-  order: 3;
-  font-size: 12px;
+  background-color: rgb(128, 128, 128);
+  border-radius: 10px;
+  text-align: center;
+  color: rgb(204, 12, 12);
+  font-size: 14px;
   max-width: 12rem;
-  padding-top: 4px;
+  margin: 0;
 }
 
-input:invalid:not(:focus):not(:placeholder-shown) ~ div:not(.avatar-display) {
+input:invalid:not(:focus):not(:placeholder-shown) ~ p {
   display: block;
 }
 
@@ -109,6 +121,7 @@ input:invalid:not(:focus):not(:placeholder-shown) ~ div:not(.avatar-display) {
   height: 6rem;
   align-self: center;
   border-radius: 10px;
+  border: 1px ridge tan;
 }
 
 .avatar-display + p {
@@ -122,6 +135,7 @@ input:invalid:not(:focus):not(:placeholder-shown) ~ div:not(.avatar-display) {
   gap: .5rem;
   flex-wrap: wrap;
   justify-content: space-evenly;
+  margin-bottom: 1rem;
 }
 
 .avatar-li div {
@@ -173,122 +187,101 @@ input:invalid:not(:focus):not(:placeholder-shown) ~ div:not(.avatar-display) {
 
 button {
   width: 12rem;
-  background-color: skyblue;
-  color: blue;
+  height: 3rem;
+  background-color: tan;
+  color: white;
+  position: relative;
   text-align: start;
   font-size: 1rem;
   border-radius: 10px;
-}
-
-button > svg {
-  width: 3rem;
-  height: 1.5rem;
-  position: absolute;
-  bottom: .55rem;
-  right: 1rem;
+  border-style: outset;
+  text-align: center;
 }
 
 button + p {
   font-size: 12px;
+  margin: 0;
+  margin-top: .25rem;
 }
 
 @media screen and (min-width: 801px) {
 
-  .avatar-display {
-    position: absolute;
-    bottom: 14rem;
-    left: -6rem;
-    grid-column: 1 / 3;
-    margin: 0;
-    border: 2px solid red;
-  }
-
-  .avatar-display + p {
-    position: absolute;
+  .container {
+    width: 32rem;
+    height: auto;
   }
   
+  ul {
+    gap: 2rem;
+  }
+  
+  li {
+    position: relative;
+    margin: 0;
+    align-items: center;
+  }
+  li:first-child, .avatar-li, .choose, li:last-child {
+    grid-column: 1 / 3;
+  }
+  li:nth-child(2), li:nth-child(4), li:nth-child(6) {
+    justify-self: end;
+  }
+  li:nth-child(3), li:nth-child(5), li:nth-child(7) {
+    justify-self: start;
+  }
   .ricehat {
     margin: 1rem 0 .5rem;
   }
 
-  .container {
-    width: 36rem;
-    position: static;
-    display: block;
-    padding: 0;
-    height: auto;
-    box-shadow: 5px 5px 10px black;
-    border-top: 2px solid rgb(128, 128, 128);
-    background-color: rgba(128, 128, 128, .8);
-    margin-top: 1rem;
-  }
-  
-  ul {
-    grid-template-columns: 1fr 1fr;
-    gap: 2rem;
-  }
-  li {
-    font-size: 16px;
-    position: relative;
-    margin: 0;
-  }
-  li:last-child {
-    grid-column: 1 / 3;
-    justify-content: center;
-    margin: 0 !important;
-  }
-
   .avatar-li {
-    grid-column: 1 / 3;
-    justify-self: center;
+    margin: -1.5rem;
   }
 
-  li:first-child {
-    grid-column: 1 / 3;
-  }
-  
-  label {
+  /* Labels */
+  label:not(label[for=avatar]) {
     position: absolute;
-  }
-
-  input:hover {
-    border-bottom: 2px solid blue;
+    top: .5rem;
+    left: .25rem;
   }
   input:focus + label, input:valid:not(:placeholder-shown) + label:not(#avatar+label), 
   input:not(:focus):not(:placeholder-shown):invalid + label {
     transition: all ease .2s;
-    transform: translate(-.5rem, -1.25rem);
+    transform: translateY(-1.5rem);
     font-weight: 600;
-    font-size: .85rem;
+    font-size: 14px;
     color: white;
   }
-
-  input:valid:not(input[type="file"]):not(:placeholder-shown) + label::after {
-    left: 10.75rem;
-    top: 1.5rem;
-  }
-  input:invalid:not(:focus):not(:placeholder-shown):not(#avatar) {
-    margin-bottom: .75rem;
-  }
-
+  input:valid:not(input[type="file"]):not(:placeholder-shown) + label::after,
   input:invalid:not(:focus):not(:placeholder-shown) + label::after {
-    left: 10.75rem;
+    left: 10.5rem;
     top: 1.5rem;
   }
 
-  input:invalid:not(:focus):not(:placeholder-shown) ~ div {
-    top: 1.5rem;
+  input:invalid:not(:focus):not(:placeholder-shown) ~ p {
+    top: 1.9rem;
+    width: 13rem;
     position: absolute;
-    padding-bottom: 1rem;
+    margin: 0 auto;
+  }
+
+  .avatar-display {
+    position: absolute;
+    display: block;
+    bottom: 15rem;
+    left: -11rem;
+  }
+
+  .avatar-display + p {
+    margin-top: -1.25rem;
   }
   
   button {
-    margin-top: 0;
-    height: 2rem;
+    margin-top: .75rem;
+    width: 6rem;
+    height: 3rem;
   }
 
   button > svg {
-    top: .25rem;
-    right: .5rem;
+    display: none;
   }
 }
