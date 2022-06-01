@@ -3,7 +3,7 @@
 }
 
 :root {
-  background-image: url("viet.jpg");
+  background-image: url("Photos/viet.jpg");
   background-repeat: no-repeat;
   background-position: center;
   background-attachment: fixed;
@@ -14,10 +14,6 @@
 .ricehat {
   width: 70px;
   height: auto;
-}
-
-.ricehat2 {
-  display: none;
 }
 
 .container {
@@ -97,7 +93,7 @@ input:invalid:not(:focus):not(:placeholder-shown) {
 }
 
 input:valid:not(input[type="file"]):not(:placeholder-shown) + label::after {
-  content: url("validsvg.svg");
+  content: url("Photos/validsvg.svg");
   display: block;
   width: 1rem;
   height: 1rem;
@@ -106,7 +102,7 @@ input:valid:not(input[type="file"]):not(:placeholder-shown) + label::after {
   top: 1.35rem;
 }
 input:invalid:not(:focus):not(:placeholder-shown) + label::after {
-  content: url("invalidsvg.svg");
+  content: url("Photos/invalidsvg.svg");
   display: block;
   width: 1rem;
   height: 1rem;
@@ -165,15 +161,15 @@ li:not(.avatar-li) > div:not(.chosen-avatar) {
   border-radius: 10px;
 }
 .avatar-li div:nth-child(1) {
-  background-image: url("moto2.jpg");
+  background-image: url("Photos/moto2.jpg");
   display: inline-block;
 }
 .avatar-li div:nth-child(2) {
-  background-image: url("canyoning.jpg");
+  background-image: url("Photos/canyoning.jpg");
   display: inline-block;
 }
 .avatar-li div:nth-child(3) {
-  background-image: url("hammock.jpg");
+  background-image: url("Photos/hammock.jpg");
   display: inline-block;
 }
 .avatar-li div:last-child {
