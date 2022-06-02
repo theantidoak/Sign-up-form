@@ -46,7 +46,13 @@ li {
   width: 2rem;
   height: auto;
   left: -2.5rem;
+}
 
+.ricehat-password2 {
+  position: absolute;
+  width: 2rem;
+  height: auto;
+  right: -2.5rem;
 }
 
 /* Inputs */
