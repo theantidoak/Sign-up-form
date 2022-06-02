@@ -6,6 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Sign Up</title>
   <link rel="stylesheet" href="style.css">
+  <script src="/script.js" defer></script>
 </head>
 <body> 
   <div class="container">
@@ -15,12 +16,12 @@
           <style>
             .text {
               fill: white;
-              font-size: .75px;
+              font-size: .65px;
             }
           </style>
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="3.45 2.95 3.1 3.562" class="ricehat">
             <path d="M 3.5 5 Q 5 5.7 6.5 5 M 3.5 5 L 5 3 L 6.5 5 M 3.5 5 L 5 5.75 L 6.5 5 M 4.75 6.15 L 3.5 5 M 5.25 6.15 L 6.5 5 M 6 5.45 C 7 6.25 5.5 7.35 6 5.25 M 4 5.45 C 3 6.25 4.5 7.35 4 5.25" stroke="black" stroke-width="0.05" fill="tan"/>
-            <text class="text" x="3.8" y="4.95">RiceHat</text>
+            <text class="text" x="3.95" y="4.95">RiceHat</text>
           </svg>
         </li>
         <li>
@@ -49,7 +50,12 @@
           pattern="(?=^.{8,}$)((?=.*\d)|(?=.*\W+))(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$" 
           id="pwd" required>
           <label for="pwd">Password*</label>
-          <p>Invalid password</p>
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="3.45 2.95 3.1 3.562" class="ricehat-password">
+            <path d="M 3.5 5 Q 5 5.7 6.5 5 M 3.5 5 L 5 3 L 6.5 5 M 4.75 6.15 L 3.5 5 M 5.25 6.15 L 6.5 5" stroke="black" stroke-width="0.05" fill="tan" fill-opacity="0"/>
+            <path d="M 3.5 5 L 5 5.75 L 6.5 5" stroke="black" stroke-width="0.05" fill="tan" fill-opacity="0"/>
+            <path d="M 6 5.45 C 7 6.25 5.5 7.35 6 5.25" stroke="black" stroke-width="0.05" fill="tan" fill-opacity="0"/>
+            <path d="M 4 5.45 C 3 6.25 4.5 7.35 4 5.25" stroke="black" stroke-width="0.05" fill="tan" fill-opacity="0"/>
+          </svg>
         </li>
         <li>
           <input type="password" placeholder=" " id="confirm-pwd" required>
