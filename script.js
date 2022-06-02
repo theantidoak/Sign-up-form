@@ -2,16 +2,21 @@ const password = document.querySelector("#pwd");
 const confirmPwd = document.querySelector("#confirm-pwd");
 
 password.addEventListener("input", fillPasswordSVG);
-confirmPwd.addEventListener("input", matchPassword);
+confirmPwd.addEventListener("input", displayError);
 confirmPwd.addEventListener("input", fillConfirmPwdSVG);
 password.addEventListener("blur", displayError);
 
 function displayError() {
   const userPassword = password.value;
-  let regexMatch = new RegExp(password.getAttribute("pattern"));
-  console.log(regexMatch);
+  const regexMatch = new RegExp(password.getAttribute("pattern"));
+
+  if (password.value == confirmPwd.value) {
+    confirmPwd.setCustomValidity("");
+  }
+  else {
+    confirmPwd.setCustomValidity("Passwords must match");
+  }
   if (userPassword.match(regexMatch)) {
-    console.log('hi');
     password.setCustomValidity("");
   }
   else {
@@ -44,17 +49,14 @@ function fillPasswordSVG() {
 }
 
 function fillConfirmPwdSVG() {
+
+  if (password.value == "") return;
   const triangle = document.querySelector("#triangle2");
   const upsideDown = document.querySelector("#upsidedown-tri2");
   const leftEar = document.querySelector("#left-ear2");
   const rightEar = document.querySelector("#right-ear2");
 
   let passwordLength = password.value.length;
-
-  console.log(passwordLength);
-  console.log(Math.floor(passwordLength / 4));
-  console.log(Math.floor(passwordLength / 2));
-  console.log(Math.floor(passwordLength * .75));
 
   Math.floor(passwordLength / 4) <= confirmPwd.value.length ? 
     upsideDown.setAttribute('fill-opacity', "1") :
@@ -71,13 +73,4 @@ function fillConfirmPwdSVG() {
   passwordLength == confirmPwd.value.length ? 
     triangle.setAttribute('fill-opacity', "1") :
     triangle.setAttribute('fill-opacity', "0");
-}
-
-function matchPassword() {
-  if (password.value == confirmPwd.value) {
-    confirmPwd.setCustomValidity("");
-  }
-  else {
-    confirmPwd.setCustomValidity("Passwords must match");
-  }
 }

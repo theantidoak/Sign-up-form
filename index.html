@@ -33,7 +33,7 @@
           <input type="text" id="username" placeholder=" " pattern="^[\w\d\.-]{3,15}$"
           required>
           <label for="username">Username*</label>
-          <p>3-15 characters</p>
+          <p>3-15: 'a-z', numbers, '.', '-' only</p>
         </li>
         <li>
           <input type="email" id="email" placeholder=" " required>
@@ -50,6 +50,7 @@
           pattern="(?=^.{8,}$)((?=.*\d)|(?=.*\W+))(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$" 
           id="pwd" required>
           <label for="pwd">Password*</label>
+          <p>At least: 1 Uppercase, 1 lowercase, 1 number, 8+</p>
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="3.45 2.95 3.1 3.562" class="ricehat-password">
             <path id="upsidedown-tri" d="M 3.5 5 L 5 5.75 L 6.5 5" stroke="black" stroke-width="0.05" fill="tan" fill-opacity="0"/>
             <path id="triangle" d="M 3.5 5 Q 5 5.7 6.5 5 M 3.5 5 L 5 3 L 6.5 5 M 4.75 6.15 L 3.5 5 M 5.25 6.15 L 6.5 5" stroke="black" stroke-width="0.05" fill="tan" fill-opacity="0"/>
@@ -66,7 +67,6 @@
             <path id="left-ear2" d="M 6 5.45 C 7 6.25 5.5 7.35 6 5.25" stroke="black" stroke-width="0.05" fill="tan" fill-opacity="0"/>
             <path id="right-ear2" d="M 4 5.45 C 3 6.25 4.5 7.35 4 5.25" stroke="black" stroke-width="0.05" fill="tan" fill-opacity="0"/>
           </svg>
-          <p>Passwords must match</p>
         </li>
         <li class="choose">
           <div class="avatar-display"></div>

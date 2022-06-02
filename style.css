@@ -128,6 +128,7 @@ label ~ p {
   font-size: 14px;
   max-width: 12rem;
   margin: 0;
+  z-index: 1;
 }
 
 input:invalid:not(:focus):not(:placeholder-shown) ~ p {
