@@ -39,13 +39,21 @@ li {
   align-self: center;
   width: 6rem;
   height: auto;
+  z-index: 2;
+  position: inline;
+}
+.ricehat-after-avatar {
+  position: relative;
+  left: -5rem;
+  top: 27.5rem;
+  width: 2rem;
 }
 
 .ricehat-password {
   position: absolute;
   width: 2rem;
   height: auto;
-  left: -2.5rem;
+  right: -2.5rem;
 }
 
 .ricehat-password2 {
@@ -138,11 +146,14 @@ input:invalid:not(:focus):not(:placeholder-shown) ~ p {
 /* Avatar */
 .avatar-display {
   display: none;
-  width: 6rem;
-  height: 6rem;
+  width: 7rem;
+  height: 7rem;
   align-self: center;
   border-radius: 10px;
   border: 1px ridge tan;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
 }
 
 .avatar-display + p {
@@ -235,6 +246,7 @@ button + p {
   
   ul {
     gap: 2rem;
+    grid-auto-rows: minmax(10px, auto);
   }
   
   li {
@@ -242,6 +254,7 @@ button + p {
     margin: 0;
     align-items: center;
   }
+  
   li:first-child, .avatar-li, .choose, li:last-child {
     grid-column: 1 / 3;
   }
@@ -251,8 +264,9 @@ button + p {
   li:nth-child(3), li:nth-child(5), li:nth-child(7) {
     justify-self: start;
   }
-  .ricehat {
-    margin: 1rem 0 .5rem;
+  
+  .ricehat-password {
+    left: -2.5rem;
   }
 
   .avatar-li {
@@ -290,8 +304,8 @@ button + p {
   .avatar-display {
     position: absolute;
     display: block;
-    bottom: 15rem;
-    left: -11rem;
+    bottom: 14.3rem;
+    z-index: 1;
   }
 
   .avatar-display + p {

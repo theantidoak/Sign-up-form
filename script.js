@@ -1,10 +1,97 @@
 const password = document.querySelector("#pwd");
 const confirmPwd = document.querySelector("#confirm-pwd");
+const avatar1 = document.querySelector("#avatar-1");
+const avatar2 = document.querySelector("#avatar-2");
+const avatar3 = document.querySelector("#avatar-3");
+const avatarDisplay = document.querySelector(".avatar-display");
+let avatarFlag1 = false;
+let avatarFlag2 = false;
+let avatarFlag3 = false;
 
 password.addEventListener("input", fillPasswordSVG);
 confirmPwd.addEventListener("input", displayError);
-confirmPwd.addEventListener("input", fillConfirmPwdSVG);
 password.addEventListener("blur", displayError);
+confirmPwd.addEventListener("input", fillConfirmPwdSVG);
+
+avatar1.addEventListener("click", () => {
+  const ricehat = document.querySelector(".ricehat");
+  const liFirst = document.querySelector("li:first-child");
+  if (avatarFlag1 == true) {
+    if (window.innerWidth <= 800) {
+      avatarDisplay.style.display = 'none';
+    } else {
+      avatarDisplay.style.display = 'block';
+    }
+    avatarFlag1 = false;
+    avatarDisplay.style.backgroundImage = "none";
+    liFirst.style.minHeight = "none";
+    ricehat.classList.remove('ricehat-after-avatar');
+  } else {
+    if (window.innerWidth >= 800) {
+      ricehat.classList.add('ricehat-after-avatar');
+      liFirst.style.minHeight = "6.89rem";
+    } else {
+      avatarDisplay.style.display = 'block';
+    }
+    avatarFlag1 = true;
+    avatarDisplay.style.backgroundImage = "url('Photos/moto2.jpg')";
+  }
+  avatarFlag2 = false;
+  avatarFlag3 = false;
+});
+avatar2.addEventListener("click", () => {
+  const ricehat = document.querySelector(".ricehat");
+  const liFirst = document.querySelector("li:first-child");
+  if (avatarFlag2 == true) {
+    if (window.innerWidth <= 800) {
+      avatarDisplay.style.display = 'none';
+    } else {
+      avatarDisplay.style.display = 'block';
+    }
+    avatarFlag2 = false;
+    avatarDisplay.style.backgroundImage = "none";
+    liFirst.style.minHeight = "none";
+    ricehat.classList.remove('ricehat-after-avatar');
+  } else {
+    if (window.innerWidth >= 800) {
+      ricehat.classList.add('ricehat-after-avatar');
+      liFirst.style.minHeight = "6.89rem";
+    } else {
+      avatarDisplay.style.display = 'block';
+    }
+    avatarFlag2 = true;
+    avatarDisplay.style.backgroundImage = "url('Photos/canyoning.jpg')";
+  }
+  avatarFlag1 = false;
+  avatarFlag3 = false;
+});
+avatar3.addEventListener("click", () => {
+  const ricehat = document.querySelector(".ricehat");
+  const liFirst = document.querySelector("li:first-child");
+  if (avatarFlag3 == true) {
+    if (window.innerWidth <= 800) {
+      avatarDisplay.style.display = 'none';
+    } else {
+      avatarDisplay.style.display = 'block';
+    }
+    avatarFlag3 = false;
+    avatarDisplay.style.backgroundImage = "none";
+    liFirst.style.minHeight = "none";
+    ricehat.classList.remove('ricehat-after-avatar');
+  } else { 
+    if (window.innerWidth >= 800) {
+      ricehat.classList.add('ricehat-after-avatar');
+      liFirst.style.minHeight = "6.89rem";
+    } else {
+      avatarDisplay.style.display = 'block';
+    }
+    avatarFlag3 = true;
+    avatarDisplay.style.backgroundImage = "url('Photos/hammock.jpg')";
+  }
+  avatarFlag1 = false;
+  avatarFlag2 = false;
+})
+
 
 function displayError() {
   const userPassword = password.value;
@@ -57,20 +144,23 @@ function fillConfirmPwdSVG() {
   const rightEar = document.querySelector("#right-ear2");
 
   let passwordLength = password.value.length;
-
-  Math.floor(passwordLength / 4) <= confirmPwd.value.length ? 
+  
+  password.value.slice(0, (Math.floor(passwordLength * .25))) == 
+    confirmPwd.value.slice(0, (Math.floor(passwordLength * .25))) ? 
     upsideDown.setAttribute('fill-opacity', "1") :
     upsideDown.setAttribute('fill-opacity', "0");
 
-  Math.floor(passwordLength / 2) <= confirmPwd.value.length ? 
+  password.value.slice(0, (Math.floor(passwordLength * .5))) == 
+    confirmPwd.value.slice(0, (Math.floor(passwordLength * .5))) ? 
     leftEar.setAttribute('fill-opacity', "1") :
     leftEar.setAttribute('fill-opacity', "0");
 
-  Math.floor(passwordLength * .75) <= confirmPwd.value.length ? 
+  password.value.slice(0, (Math.floor(passwordLength * .75))) == 
+    confirmPwd.value.slice(0, (Math.floor(passwordLength * .75))) ? 
     rightEar.setAttribute('fill-opacity', "1") :
     rightEar.setAttribute('fill-opacity', "0");
 
-  passwordLength == confirmPwd.value.length ? 
+  password.value == confirmPwd.value ? 
     triangle.setAttribute('fill-opacity', "1") :
     triangle.setAttribute('fill-opacity', "0");
 }
