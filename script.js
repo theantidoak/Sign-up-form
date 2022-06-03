@@ -3,94 +3,78 @@ const confirmPwd = document.querySelector("#confirm-pwd");
 const avatar1 = document.querySelector("#avatar-1");
 const avatar2 = document.querySelector("#avatar-2");
 const avatar3 = document.querySelector("#avatar-3");
+const avatarArray = [avatar1, avatar2, avatar3];
 const avatarDisplay = document.querySelector(".avatar-display");
+const avatarDisplayLaptop = document.querySelector(".avatar-display-laptop");
+
 let avatarFlag1 = false;
 let avatarFlag2 = false;
 let avatarFlag3 = false;
+
 
 password.addEventListener("input", fillPasswordSVG);
 confirmPwd.addEventListener("input", displayError);
 password.addEventListener("blur", displayError);
 confirmPwd.addEventListener("input", fillConfirmPwdSVG);
+avatarArray.forEach((avatar) => avatar.addEventListener("click", makeProfilePic));
 
-avatar1.addEventListener("click", () => {
+
+function makeProfilePic(e) {
   const ricehat = document.querySelector(".ricehat");
+  const ricehatRight = document.querySelector(".ricehat-after-avatar-right");
   const liFirst = document.querySelector("li:first-child");
-  if (avatarFlag1 == true) {
-    if (window.innerWidth <= 800) {
+  
+  if ((avatarFlag1 && e.target.id == "avatar-1") ||
+  (avatarFlag2 && e.target.id == "avatar-2") ||
+  (avatarFlag3 && e.target.id == "avatar-3")) {
+    if (window.innerWidth <= 801) {
       avatarDisplay.style.display = 'none';
-    } else {
-      avatarDisplay.style.display = 'block';
-    }
-    avatarFlag1 = false;
-    avatarDisplay.style.backgroundImage = "none";
-    liFirst.style.minHeight = "none";
+    } 
     ricehat.classList.remove('ricehat-after-avatar');
+    ricehatRight.style.display = "none";
+    liFirst.style.minHeight = "none";
+    avatarDisplay.style.backgroundImage = "none";
+    avatarDisplayLaptop.style.backgroundImage = "none";
   } else {
-    if (window.innerWidth >= 800) {
+    if (window.innerWidth >= 801) {
       ricehat.classList.add('ricehat-after-avatar');
+      ricehatRight.style.display = "inline";
       liFirst.style.minHeight = "6.89rem";
+      avatarDisplay.style.display = "none";
     } else {
       avatarDisplay.style.display = 'block';
     }
-    avatarFlag1 = true;
-    avatarDisplay.style.backgroundImage = "url('Photos/moto2.jpg')";
   }
-  avatarFlag2 = false;
-  avatarFlag3 = false;
-});
-avatar2.addEventListener("click", () => {
-  const ricehat = document.querySelector(".ricehat");
-  const liFirst = document.querySelector("li:first-child");
-  if (avatarFlag2 == true) {
-    if (window.innerWidth <= 800) {
-      avatarDisplay.style.display = 'none';
-    } else {
-      avatarDisplay.style.display = 'block';
-    }
-    avatarFlag2 = false;
-    avatarDisplay.style.backgroundImage = "none";
-    liFirst.style.minHeight = "none";
-    ricehat.classList.remove('ricehat-after-avatar');
-  } else {
-    if (window.innerWidth >= 800) {
-      ricehat.classList.add('ricehat-after-avatar');
-      liFirst.style.minHeight = "6.89rem";
-    } else {
-      avatarDisplay.style.display = 'block';
-    }
-    avatarFlag2 = true;
-    avatarDisplay.style.backgroundImage = "url('Photos/canyoning.jpg')";
+
+  switch (e.target.id) {
+    case 'avatar-1':
+      if (!avatarFlag1) { 
+        avatarDisplayLaptop.style.backgroundImage = "url('Photos/moto2.jpg')";
+        avatarDisplay.style.backgroundImage = "url('Photos/moto2.jpg')";
+      }
+      avatarFlag1 = !avatarFlag1;
+      avatarFlag2 = false;
+      avatarFlag3 = false;
+      break;
+    case 'avatar-2':
+      if (!avatarFlag2) {
+        avatarDisplayLaptop.style.backgroundImage = "url('Photos/canyoning.jpg')";
+        avatarDisplay.style.backgroundImage = "url('Photos/canyoning.jpg')";
+      }
+      avatarFlag2 = !avatarFlag2;
+      avatarFlag1 = false;
+      avatarFlag3 = false;
+      break;
+    case 'avatar-3':
+      if (!avatarFlag3) {
+        avatarDisplayLaptop.style.backgroundImage = "url('Photos/hammock.jpg')";
+        avatarDisplay.style.backgroundImage = "url('Photos/hammock.jpg')";
+      }
+      avatarFlag3 = !avatarFlag3;
+      avatarFlag1 = false;
+      avatarFlag2 = false;
   }
-  avatarFlag1 = false;
-  avatarFlag3 = false;
-});
-avatar3.addEventListener("click", () => {
-  const ricehat = document.querySelector(".ricehat");
-  const liFirst = document.querySelector("li:first-child");
-  if (avatarFlag3 == true) {
-    if (window.innerWidth <= 800) {
-      avatarDisplay.style.display = 'none';
-    } else {
-      avatarDisplay.style.display = 'block';
-    }
-    avatarFlag3 = false;
-    avatarDisplay.style.backgroundImage = "none";
-    liFirst.style.minHeight = "none";
-    ricehat.classList.remove('ricehat-after-avatar');
-  } else { 
-    if (window.innerWidth >= 800) {
-      ricehat.classList.add('ricehat-after-avatar');
-      liFirst.style.minHeight = "6.89rem";
-    } else {
-      avatarDisplay.style.display = 'block';
-    }
-    avatarFlag3 = true;
-    avatarDisplay.style.backgroundImage = "url('Photos/hammock.jpg')";
-  }
-  avatarFlag1 = false;
-  avatarFlag2 = false;
-})
+}
 
 
 function displayError() {
@@ -110,6 +94,7 @@ function displayError() {
     password.setCustomValidity("Passwords must match");
   }
 }
+
 
 function fillPasswordSVG() {
   const lowerCase = new RegExp("[a-z]", "g");
@@ -135,8 +120,8 @@ function fillPasswordSVG() {
     triangle.setAttribute('fill-opacity', "0");
 }
 
-function fillConfirmPwdSVG() {
 
+function fillConfirmPwdSVG() {
   if (password.value == "") return;
   const triangle = document.querySelector("#triangle2");
   const upsideDown = document.querySelector("#upsidedown-tri2");

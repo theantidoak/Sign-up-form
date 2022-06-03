@@ -13,7 +13,7 @@
 
 .container {
   width: 18rem;
-  margin: 0 auto;
+  margin: 1.5rem auto 0;
   background-color: rgba(128, 128, 128, .8);
   box-shadow: 5px 5px 10px black;
   border-top: 2px solid rgb(128, 128, 128);
@@ -44,9 +44,17 @@ li {
 }
 .ricehat-after-avatar {
   position: relative;
-  left: -5rem;
-  top: 27.5rem;
-  width: 2rem;
+  left: -14rem;
+  top: -.5rem;
+  width: 3rem;
+}
+.ricehat-after-avatar-right {
+  display: none;
+  position: relative;
+  left: 14rem;
+  top: -4rem;
+  width: 3rem;
+  height: auto;
 }
 
 .ricehat-password {
@@ -80,10 +88,6 @@ input:focus {
   border-radius: 10px;
 }
 
-input:focus + label {
-  color: black;
-}
-
 input:hover {
   border-color: tan;
   border-bottom-color: tan;
@@ -112,12 +116,6 @@ input:placeholder-shown:hover + label {
   border-color: tan;
 }
 
-input:valid:not(:placeholder-shown):not(input[type="file"]) + label::after {
-  content: url("Photos/validsvg.svg");
-}
-input:invalid:not(:placeholder-shown):not(:focus) + label::after {
-  content: url("Photos/invalidsvg.svg");
-}
 label::after {
   width: 1rem;
   height: 1rem;
@@ -125,18 +123,32 @@ label::after {
   left: -1.1rem;
   top: .5rem;
 }
+input:valid:not(:placeholder-shown):not(input[type="file"]) + label::after {
+  content: url("Photos/validsvg.svg");
+}
+input:invalid:not(:placeholder-shown):not(:focus) + label::after {
+  content: '\26A0';
+  font-size: 1.25rem;
+  left: -1.3rem;
+  top: .25rem;
+  color: #e6db55;
+}
 
 /* Error Messages */
 label ~ p {
+  padding: 2px 2px 0;
+  padding-left: 1rem;
   display: none;
-  background-color: rgb(128, 128, 128);
-  border-radius: 10px;
-  text-align: center;
-  color: rgb(204, 12, 12);
+  color: black;
   font-size: 14px;
-  max-width: 12rem;
-  margin: 0;
+  width: 10rem;
+  margin: 2px 0;
   z-index: 1;
+  background-color: #fff9cc;
+  border: 1px solid #e6db55;
+  align-self: flex-start;
+  position: relative;
+  left: 1rem;
 }
 
 input:invalid:not(:focus):not(:placeholder-shown) ~ p {
@@ -158,8 +170,10 @@ input:invalid:not(:focus):not(:placeholder-shown) ~ p {
 
 .avatar-display + p {
   font-size: 1rem;
-  margin: 0;
+  margin: .5rem 0 0;
   color: tan;
+  border-bottom: 2px solid white;
+  font-weight: 600;
 }
 
 .avatar-li {
@@ -288,28 +302,34 @@ button + p {
     font-size: 14px;
     color: tan;
   }
-  input:valid:not(input[type="file"]):not(:placeholder-shown) + label::after,
+  input:valid:not(input[type="file"]):not(:placeholder-shown) + label::after {
+    left: 10.25rem;
+    top: 1.4rem;
+  }
   input:invalid:not(:focus):not(:placeholder-shown) + label::after {
-    left: 10.5rem;
-    top: 1.5rem;
+    left: 10.25rem;
+    top: 1.4rem;
+    color: unset; 
   }
 
-  input:invalid:not(:focus):not(:placeholder-shown) ~ p {
-    top: 1.9rem;
-    width: 13rem;
+  .avatar-display-laptop {
+    width: 7rem;
+    height: 7rem;
+    align-self: center;
+    border-radius: 10px;
+    border: 1px ridge tan;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
     position: absolute;
-    margin: 0 auto;
   }
 
-  .avatar-display {
-    position: absolute;
-    display: block;
-    bottom: 14.3rem;
-    z-index: 1;
+  label ~ p {
+    margin-bottom: -.75rem;
   }
 
   .avatar-display + p {
-    margin-top: -1.25rem;
+    margin-top: -1rem;
   }
   
   button {

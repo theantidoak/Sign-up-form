@@ -10,7 +10,7 @@
 </head>
 <body> 
   <div class="container">
-    <form action="post">
+    <form action="#">
       <ul>
         <li>
           <style>
@@ -19,7 +19,13 @@
               font-size: .65px;
             }
           </style>
+          <div class="avatar-display-laptop"></div>
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="3.45 2.95 3.1 3.562" class="ricehat">
+            <path d="M 3.5 5 Q 5 5.7 6.5 5 M 3.5 5 L 5 3 L 6.5 5 M 3.5 5 L 5 5.75 L 6.5 5 M 4.75 6.15 L 3.5 5 M 5.25 6.15 L 6.5 5 M 6 5.45 C 7 6.25 5.5 7.35 6 5.25 M 4 5.45 C 3 6.25 4.5 7.35 4 5.25" 
+            stroke="black" stroke-width="0.05" fill="tan"/>
+            <text class="text" x="3.95" y="4.95">RiceHat</text>
+          </svg>
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="3.45 2.95 3.1 3.562" class="ricehat-after-avatar-right">
             <path d="M 3.5 5 Q 5 5.7 6.5 5 M 3.5 5 L 5 3 L 6.5 5 M 3.5 5 L 5 5.75 L 6.5 5 M 4.75 6.15 L 3.5 5 M 5.25 6.15 L 6.5 5 M 6 5.45 C 7 6.25 5.5 7.35 6 5.25 M 4 5.45 C 3 6.25 4.5 7.35 4 5.25" 
             stroke="black" stroke-width="0.05" fill="tan"/>
             <text class="text" x="3.95" y="4.95">RiceHat</text>
@@ -34,12 +40,12 @@
           <input type="text" id="username" placeholder=" " pattern="^[\w\d\.-]{3,15}$"
           required>
           <label for="username">Username*</label>
-          <p>3-15: 'a-z', numbers, '.', '-' only</p>
+          <p>3-15 characters <br> letters <br> numbers <br> '.' <br> '-'</p>
         </li>
         <li>
           <input type="email" id="email" placeholder=" " required>
           <label for="email">Email*</label>
-          <p>Invalid email address</p>
+          <p>Must include '@'</p>
         </li>
         <li>
           <input type="tel" id="phone" placeholder=" " pattern="^\d{3}[\-]\d{3}[\-]\d{4}$">
@@ -51,7 +57,7 @@
           pattern="(?=^.{8,}$)((?=.*\d)|(?=.*\W+))(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$" 
           id="pwd" required>
           <label for="pwd">Password*</label>
-          <p>At least: 1 Uppercase, 1 lowercase, 1 number</p>
+          <p>1 Uppercase <br> 1 lowercase <br> 1 number</p>
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="3.45 2.95 3.1 3.562" class="ricehat-password">
             <path id="upsidedown-tri" d="M 3.5 5 L 5 5.75 L 6.5 5" stroke="black" stroke-width="0.05" fill="tan" fill-opacity="0"/>
             <path id="triangle" d="M 3.5 5 Q 5 5.7 6.5 5 M 3.5 5 L 5 3 L 6.5 5 M 4.75 6.15 L 3.5 5 M 5.25 6.15 L 6.5 5" stroke="black" stroke-width="0.05" fill="tan" fill-opacity="0"/>
@@ -62,6 +68,7 @@
         <li>
           <input type="password" placeholder=" " id="confirm-pwd" required>
           <label for="confirm-pwd">Confirm Password*</label>
+          <p>Passwords must match</p>
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="3.45 2.95 3.1 3.562" class="ricehat-password2">
             <path id="upsidedown-tri2" d="M 3.5 5 L 5 5.75 L 6.5 5" stroke="black" stroke-width="0.05" fill="tan" fill-opacity="0"/>
             <path id="triangle2" d="M 3.5 5 Q 5 5.7 6.5 5 M 3.5 5 L 5 3 L 6.5 5 M 4.75 6.15 L 3.5 5 M 5.25 6.15 L 6.5 5" stroke="black" stroke-width="0.05" fill="tan" fill-opacity="0"/>
