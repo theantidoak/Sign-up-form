@@ -1,3 +1,12 @@
+@font-face {
+  font-family: 'kdam_thmor_proregular';
+  src: url(fonts/kdamthmorpro-regular-webfont.woff2) format('woff2'),
+       url(fonts/kdamthmorpro-regular-webfont.woff) format('woff');
+  font-weight: normal;
+  font-style: normal;
+
+}
+
 * {
   box-sizing: border-box;
 }
@@ -79,6 +88,7 @@ input {
   border-bottom: 2px solid white;
   max-width: 12rem;
   margin: 0 auto;
+  font-family: 'kdam_thmor_proregular', sans-serif;
 }
 
 input:focus {
@@ -109,6 +119,7 @@ input:invalid:not(:placeholder-shown):not(:focus) {
 label {
   display: block;
   color: white;
+  font-family: 'kdam_thmor_proregular', sans-serif;
 }
 
 input:placeholder-shown:hover + label {
