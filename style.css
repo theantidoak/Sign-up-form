@@ -27,6 +27,10 @@
   font-weight: 700;
   width: fit-content;
   text-align: center;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  padding: 2px;
 }
 
 .container {
@@ -37,7 +41,6 @@
   border-top: 2px solid rgb(128, 128, 128);
   border-left: 2px solid rgb(128, 128, 128);
   border-radius: 25px;
-  position: relative;
 }
 
 ul {
@@ -376,9 +379,5 @@ button + p {
     margin-top: .75rem;
     width: 6rem;
     height: 3rem;
-  }
-  #copyright {
-    bottom: -2.75rem;
-    left: 3.75rem;
   }
 }
