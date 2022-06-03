@@ -234,7 +234,11 @@ input:invalid:not(:focus):not(:placeholder-shown) ~ p {
 }
 
 .avatar-li div:last-child:hover {
+  border: 2px solid white;
+}
+.avatar-li div:last-child:active {
   border: 2px solid blue;
+  transform: scale(.9);
 }
 
 #avatar {
@@ -315,12 +319,12 @@ button + p {
   }
 
   /* Labels */
-  label:not(label[for=avatar]) {
+  label:not(label[for='avatar']) {
     position: absolute;
     top: .5rem;
     left: .25rem;
   }
-  input:focus + label, input:valid:not(:placeholder-shown) + label:not(#avatar+label), 
+  input:focus + label:not(#avatar+label), input:valid:not(:placeholder-shown) + label:not(#avatar+label), 
   input:not(:focus):not(:placeholder-shown):invalid + label {
     transition: all ease .2s;
     transform: translateY(-1.5rem);
