@@ -20,6 +20,15 @@
   font-size: 16px;
 }
 
+#copyright {
+  position: absolute;
+  font-size: .75rem;
+  background-color: rgba(210, 180, 140, .6);
+  font-weight: 700;
+  width: fit-content;
+  text-align: center;
+}
+
 .container {
   width: 18rem;
   margin: 1.5rem auto 0;
@@ -28,6 +37,7 @@
   border-top: 2px solid rgb(128, 128, 128);
   border-left: 2px solid rgb(128, 128, 128);
   border-radius: 25px;
+  position: relative;
 }
 
 ul {
@@ -366,5 +376,9 @@ button + p {
     margin-top: .75rem;
     width: 6rem;
     height: 3rem;
+  }
+  #copyright {
+    bottom: -2.75rem;
+    left: 3.75rem;
   }
 }
