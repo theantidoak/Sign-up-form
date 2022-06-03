@@ -303,12 +303,12 @@ button + p {
     color: tan;
   }
   input:valid:not(input[type="file"]):not(:placeholder-shown) + label::after {
-    left: 10.25rem;
+    left: 9.75rem;
     top: 1.4rem;
   }
   input:invalid:not(:focus):not(:placeholder-shown) + label::after {
-    left: 10.25rem;
-    top: 1.4rem;
+    left: 9.75rem;
+    top: 1rem;
     color: unset; 
   }
 
