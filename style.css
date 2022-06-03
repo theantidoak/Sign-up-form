@@ -222,11 +222,17 @@ input:invalid:not(:focus):not(:placeholder-shown) ~ p {
 }
 .avatar-li div:nth-child(1):hover, .avatar-li div:nth-child(2):hover, 
 .avatar-li div:nth-child(3):hover {
-  border: 2px solid blue;
+  border: 2px solid white;
   transform: scale(1.5);
   transition: all ease .1s;
   z-index: 2;
 }
+.avatar-li div:nth-child(1):active, .avatar-li div:nth-child(2):active, 
+.avatar-li div:nth-child(3):active {
+  border: 2px solid blue;
+  transform: scale(1.4);
+}
+
 .avatar-li div:last-child:hover {
   border: 2px solid blue;
 }
@@ -254,6 +260,15 @@ button {
   border-radius: 10px;
   border-style: outset;
   text-align: center;
+}
+
+button:hover {
+  outline: 2px solid white;
+}
+
+button:active {
+  transform: translate(1px, 1px);
+  outline: 2px solid blue;
 }
 
 button + p {
