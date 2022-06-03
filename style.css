@@ -333,11 +333,11 @@ button + p {
     color: tan;
   }
   input:valid:not(input[type="file"]):not(:placeholder-shown) + label::after {
-    left: 9.75rem;
+    left: 9rem;
     top: 1.4rem;
   }
   input:invalid:not(:focus):not(:placeholder-shown) + label::after {
-    left: 9.75rem;
+    left: 9rem;
     top: 1rem;
     color: unset; 
   }
