@@ -78,12 +78,12 @@
         </li>
         <li class="choose">
           <div class="avatar-display"></div>
-          <p>Choose an Avatar</p>
+          <p id="choose-avatar">Choose an Avatar</p>
         </li>
         <li class="avatar-li">
-          <div id="avatar-1"></div>
-          <div id="avatar-2"></div>
-          <div id="avatar-3"></div>
+          <div id="avatar-1" aria-describedby="choose-avatar" alt="red motorbike"></div>
+          <div id="avatar-2" aria-describedby="choose-avatar" alt="person canyoning on a waterfall"></div>
+          <div id="avatar-3" aria-desccribedby="choose-avatar" alt="hammock on a beach"></div>
           <div>
             <input type="file" id="avatar">
             <label for="avatar">Upload here</label>
@@ -92,7 +92,7 @@
         <li>
           <button type="submit">Sign Up
           </button>
-          <p>Already have an account? <a href="">Click here</a></p>
+          <p>Already have an account? <a href="" aria-label="log-in">Click here</a></p>
         </li>
       </ul>
     </form>

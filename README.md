@@ -14,16 +14,13 @@ This project started on 27/05, and originally completed on 03/06. The ojective o
   9. Make it compatible with mobile devices (i.e., smaller screen sizes)
   10. Experiment with CSS units
   11. Practice using different CSS selectors
+  12. Experiment with 'aria' attributes
+  13. Expriment with custom properties
 
 
   Unachieved goals: 
     1. Use min(), max(), and clamp()
         Reason: Although attempting to use these at the beginning, they soon became unnecessary.
-    2. Use custom properties
-        Reason: Simply forgot. 
-    3. 'aria' attributes
-        Reason: More research.
-        Come back and try them out!
   
   Thoughts/What I learned:
     
@@ -41,4 +38,4 @@ This project started on 27/05, and originally completed on 03/06. The ojective o
 
   What I did poorly:
    
-    Commit messages
+    Commit messages at appropriate intervals/times

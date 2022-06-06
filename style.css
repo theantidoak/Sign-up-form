@@ -18,6 +18,7 @@
   background-attachment: fixed;
   background-size: cover;
   font-size: 16px;
+  --ugly-yellow: #e6db55;
 }
 
 #copyright {
@@ -155,7 +156,7 @@ input:invalid:not(:placeholder-shown):not(:focus) + label::after {
   font-size: 1.25rem;
   left: -1.3rem;
   top: .25rem;
-  color: #e6db55;
+  color: var(--ugly-yellow);
 }
 
 /* Error Messages */
@@ -169,7 +170,7 @@ label ~ p {
   margin: 2px 0;
   z-index: 1;
   background-color: #fff9cc;
-  border: 1px solid #e6db55;
+  border: 1px solid var(--ugly-yellow);
   align-self: flex-start;
   position: relative;
   left: 1rem;
